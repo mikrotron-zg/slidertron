@@ -12,6 +12,7 @@
 #ifndef DEBUG_H
     #define DEBUG_H
     #ifdef DEBUG_MODE // debug development settings
+        #warning "WARNING! Debug mode is enabled, disable for production!"
         // calls to DEBUG will be replaced with Serial.print command
         #define DEBUG(x) Serial.print(x)
         // calls to DEBUGLN will be replaced with Serial.println command
