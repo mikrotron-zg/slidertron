@@ -5,13 +5,16 @@
 #include <Arduino.h>
 #include "Configuration.h"
 #include "WebServer.h"
+#include "WebSocketsCommunication.h"
+
+Status slider_status = NOT_INITIALIZED;
 
 void setup() {
   // Program start
   #ifdef DEBUG_MODE
     // Enable serial if in debug mode
     Serial.begin(115200);
-    delay(5000);
+    delay(DELAY_LONG);
   #endif
   DEBUGLN("Debug mode: on");
 
@@ -20,8 +23,11 @@ void setup() {
     DEBUGLN("SPIFFS mounting error");
   }
 
+  // Start servers
+  delay(DELAY_SHORT);
   startWebServer();
-
+  delay(DELAY_SHORT);
+  startWebSocketsServer();
 }
 
 void loop() {

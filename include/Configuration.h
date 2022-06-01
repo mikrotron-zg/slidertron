@@ -7,11 +7,21 @@
     #define CONFIGURATION_H
     // Settings
     #define DEBUG_MODE // please read the instructions in include/Debug.h file
-    
-    // Includes
-    #include <SPIFFS.h>  // access to file system
-    #include "Debug.h"   // debugging macros
+    #define DELAY_LONG 5000 // in miliseconds
+    #define DELAY_SHORT 250 // in miliseconds
 
-    // Variables
+    // Includes
+    #include <SPIFFS.h>
+    #include "Debug.h"
+
+    // Enums
+    typedef enum {
+        NOT_INITIALIZED,
+        INITIALIZING,
+        INITIALIZED,
+        RUNNING
+    } Status;
+
+    extern Status slider_status;
 
 #endif
