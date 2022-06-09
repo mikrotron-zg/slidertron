@@ -18,7 +18,7 @@
     typedef enum {
         NOT_INITIALIZED,
         INITIALIZING,
-        INITIALIZED,
+        IDLE,
         RUNNING
     } Status;
 
