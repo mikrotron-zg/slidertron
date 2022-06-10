@@ -31,5 +31,5 @@ void setup() {
 }
 
 void loop() {
-  
+  ws_server.loop(); // Wait for websocket data
 }

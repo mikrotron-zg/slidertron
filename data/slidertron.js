@@ -91,6 +91,6 @@ function setStatus(value) {
     case 2: sliderStatus = "idle"; break;
     case 3: sliderStatus = "running"; break;
     default: sliderStatus = "not connected";
-    document.getElementById("status").innerHTML = sliderStatus;
   }
+  document.getElementById("status").innerHTML = sliderStatus;
 }

@@ -12,6 +12,7 @@
 
     // Includes
     #include <SPIFFS.h>
+    #include <ESPAsyncWebServer.h>
     #include "Debug.h"
 
     // Enums
@@ -23,5 +24,4 @@
     } Status;
 
     extern Status slider_status;
-
 #endif

@@ -1,5 +1,3 @@
-#include <ESPAsyncWebServer.h>
-#include <WebSocketsServer.h>
 #include "Configuration.h"
 #include "WebSocketsCommunication.h"
 
@@ -13,10 +11,10 @@ typedef enum {
 /***********************************************************************
  ************************** Events handling ****************************
  ***********************************************************************/
-void sendMessage(MessageType type, int value) {
+void sendMessage(char type, int value) {
   // Sends message currently in the message buffer to current client
   char msg_buf[WS_MSG_BUFFER_SIZE];
-  printf(msg_buf, "%s:%d", type, value);
+  sprintf(msg_buf, "%c:%d", type, value);
   DEBUG(current_client); DEBUG(" - sending message: "); DEBUGLN(msg_buf);
   ws_server.sendTXT(current_client, msg_buf);
 }
